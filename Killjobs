@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$1" == "" ]
+then
+   echo "Usage killjob.sh keyword"
+   exit 0
+fi
+
+read -p "Do you want \"$1\" jobs ? (y/n): " yn
+if [ "$yn" != "y" ]; then
+  echo "you chose no"
+  exit 1
+fi
+
+ps -aef | grep -v 'PID' | grep -v 'killjob' |grep -v 'grep' | grep "$1"
+jlist=`ps -aef | grep -v 'PID' | grep -v 'killjob' |grep -v 'grep' | grep "$1" |awk '{print $2}'`
+for num in $jlist
+do
+  echo "kill $num"
+  kill $num
+done
+exit 0
+
