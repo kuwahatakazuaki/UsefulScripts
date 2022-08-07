@@ -10,11 +10,9 @@ fi
 
 for file in $(echo $all_file);
 do
-#  echo $file
   cp $file $dir_new
 done
 
-# tac XDATCAR |sed '/${system}/q' | tac > sp_new/POSCAR 
 tac XDATCAR |sed "/${system}/q" | tac > $dir_new/POSCAR 
 
 cd $dir_new
@@ -23,5 +21,5 @@ sed '/NSW/d' tempfile > INCAR
 
 rm tempfile
 
-/home/vasp_guest/.local/vasp.5.4.4.intel_serial/bin/vasp_std > log.out &
+# /home/vasp_guest/.local/vasp.5.4.4.intel_serial/bin/vasp_std > log.out &
 
