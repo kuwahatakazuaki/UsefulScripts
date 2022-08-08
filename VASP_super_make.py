@@ -35,7 +35,7 @@ with open('new_str.vasp','w') as f:
     for i in range(3):
         for j in range(3):
             # f.write(f"{np.round(lat[j,i],5):f} ")
-            f.write(f"{lat[i,j]*change[j]:.10f} ")
+            f.write(f"{lat[i,j]*change[i]:.10f} ")
         f.write("\n")
     f.write("  ".join(lines[5]))
     f.write("\n")
