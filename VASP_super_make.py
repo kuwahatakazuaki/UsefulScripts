@@ -2,7 +2,6 @@
 import sys
 import fileinput
 import numpy as np
-from pandas import NA
 
 Narg=len(sys.argv)
 if Narg == 1:
