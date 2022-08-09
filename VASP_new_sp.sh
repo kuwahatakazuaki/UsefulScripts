@@ -13,8 +13,10 @@ do
   cp $file $dir_new
 done
 
-tac XDATCAR |sed "/${system}/q" | tac > $dir_new/POSCAR 
+cp CONTCAR $dir_new/POSCAR
+# tac XDATCAR |sed "/${system}/q" | tac > $dir_new/POSCAR 
 
+# === Move to $dir_new ===
 cd $dir_new
 sed '/IBRION/d' INCAR > tempfile
 sed '/NSW/d' tempfile > INCAR 
