@@ -3,6 +3,8 @@ import sys
 import fileinput
 import numpy as np
 
+
+np.set_printoptions(suppress=True)
 Ncut = 0
 # basistemp = []
 a = []
@@ -36,9 +38,13 @@ b1 = np.mean(b[Ncut:,:],axis=0)
 c1 = np.mean(c[Ncut:,:],axis=0)
 
 print("Average of basis set")
-print(a1)
-print(b1)
-print(c1)
+# print(a1)
+# print(b1)
+# print(c1)
+print(*np.round(a1,8))
+print(*np.round(b1,8))
+print(*np.round(c1,8))
+
 print("Average volume from basis set: ", np.dot(np.cross(a1,b1),c1))
 print("Average volume from volume   : ",np.mean(volu))
 
