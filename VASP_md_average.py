@@ -1,4 +1,4 @@
-#!//usr/bin/env python3
+#!/usr/bin/env python3
 import sys
 import fileinput
 import numpy as np
