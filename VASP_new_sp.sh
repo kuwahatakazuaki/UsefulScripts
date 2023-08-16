@@ -11,6 +11,7 @@ fi
 for file in $(echo $all_file);
 do
   cp $file $dir_new
+  cp *sh $dir_new
 done
 
 cp CONTCAR $dir_new/POSCAR
